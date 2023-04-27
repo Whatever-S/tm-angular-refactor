@@ -1,0 +1,29 @@
+{
+  "users":
+  [
+  {"id":1,
+  "firstname":"Leanne",
+  "lastname": "Bret",
+  "email": "Sincere@april.biz",
+  "phone": "1-770-736-8031 x56442"
+  },
+  {"id":2,
+  "firstname":"Leanne",
+  "lastname": "Bret",
+  "email": "Sincere@april.biz",
+  "phone": "1-770-736-8031 x56442"
+  },
+  {"id":3,
+  "firstname":"Leanne",
+  "lastname": "Bret",
+  "email": "Sincere@april.biz",
+  "phone": "1-770-736-8031 x56442"
+  },
+  {"id":4,
+  "firstname":"Leanne",
+  "lastname": "Bret",
+  "email": "Sincere@april.biz",
+  "phone": "1-770-736-8031 x56442"
+  }
+  ]
+}

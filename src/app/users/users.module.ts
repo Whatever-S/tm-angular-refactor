@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UsersModule } from './users/users.module';
-import { ToolbarComponent } from './toolbar/toolbar.component';
+import { CommonModule } from '@angular/common';
 
 import { MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -14,19 +8,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ToolbarComponent
+    UserListComponent,
 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    UsersModule,
+    CommonModule,
     MatCardModule,
     MatToolbarModule,
     MatIconModule ,
@@ -34,8 +25,6 @@ import { MatInputModule } from '@angular/material/input';
     MatSelectModule,
     MatOptionModule,
     MatInputModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class UsersModule { }
