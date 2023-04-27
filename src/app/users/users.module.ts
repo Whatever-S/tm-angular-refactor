@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule} from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar'
@@ -14,7 +15,6 @@ import { UserListComponent } from './user-list/user-list.component';
 @NgModule({
   declarations: [
     UserListComponent,
-
   ],
   imports: [
     CommonModule,
@@ -25,6 +25,10 @@ import { UserListComponent } from './user-list/user-list.component';
     MatSelectModule,
     MatOptionModule,
     MatInputModule,
+    HttpClientModule
+  ],
+  exports:[
+    UserListComponent
   ]
 })
 export class UsersModule { }

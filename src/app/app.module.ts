@@ -20,7 +20,6 @@ import { MatInputModule } from '@angular/material/input';
   declarations: [
     AppComponent,
     ToolbarComponent
-
   ],
   imports: [
     BrowserModule,
