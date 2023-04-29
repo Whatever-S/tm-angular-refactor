@@ -17,6 +17,6 @@ export class FilterByNamePipe implements PipeTransform {
 
     searchTerm = searchTerm.toLowerCase();
 
-    return users.filter(user => user.firstName.toLowerCase().includes(searchTerm));
+    return users.filter(user => user.firstName.toLowerCase().includes(searchTerm) || user.lastName.toLowerCase().includes(searchTerm));
   }
 }
