@@ -1,10 +1,56 @@
+.toolbar-wrapper {
+  display: flex;
+  align-items:center;
+  position: relative;
+  height: auto;
+  padding: 15px;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+button{
+  width: 100px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 50px;
+  margin-right: 50px;
+}
+
+.search{
+  position: absolute;
+  right: 25px;
+}
+
+.users-list{
+  max-width: 1500px;
+  margin: 25px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .user-card {
-  margin: 16px;
+  margin: 12px;
+  width: 350px;
 }
 
 .user-avatar {
-  background-color: gray;
-  width: 48px;
-  height: 48px;
+  width: 275px;
+  height: 100%;
   border-radius: 50%;
+}
+
+mat-card-subtitle{
+  font-size: 16px;
+}
+
+p{
+  margin: 5px 0px;
 }

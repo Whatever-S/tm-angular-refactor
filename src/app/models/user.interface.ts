@@ -4,4 +4,9 @@ export interface User {
   lastName: string;
   email: string;
   phone: string;
+  avatar: string
+}
+
+export interface UserWithCheck extends User {
+  checked: boolean;
 }
