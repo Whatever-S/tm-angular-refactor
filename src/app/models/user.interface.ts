@@ -10,3 +10,12 @@ export interface User {
 export interface UserWithCheck extends User {
   checked: boolean;
 }
+
+export interface ApiUser {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  avatar?: string
+  checked?: boolean;
+}

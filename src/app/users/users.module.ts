@@ -9,19 +9,24 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule} from "@angular/material/button";
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { UserListComponent } from './user-list/user-list.component';
-import { FormsModule } from '@angular/forms';
+import { UserListComponent } from './task-1/user-list.component'; 
 import { OrderByPipe } from './pipes/order-by.pipe';
-import { FilterByNamePipe } from './pipes/filter.pipe'; 
-
-
+import { FilterByNamePipe } from './pipes/filter.pipe';
+import { ApiUsersComponent } from './api-users/api-users.component';
+import { UserModalComponent } from './user-modal/user-modal.component'; 
 
 @NgModule({
   declarations: [
     UserListComponent,
     OrderByPipe,
-    FilterByNamePipe
+    FilterByNamePipe,
+    ApiUsersComponent,
+    UserModalComponent
   ],
   imports: [
     CommonModule,
@@ -33,10 +38,15 @@ import { FilterByNamePipe } from './pipes/filter.pipe';
     MatInputModule,
     HttpClientModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatIconModule,
     FormsModule,
+    ReactiveFormsModule 
   ],
   exports:[
-    UserListComponent
+    UserListComponent,
   ]
 })
+
 export class UsersModule { }

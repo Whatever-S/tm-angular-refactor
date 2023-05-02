@@ -1,0 +1,28 @@
+<button mat-icon-button style="float: right; margin: 5px;" matDialogClose >
+    <mat-icon>close</mat-icon>
+</button>
+<mat-dialog-content [formGroup] = "userCreationForm">
+    <header>
+        <h1>Create user</h1>
+    </header>
+    <p><mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstName">
+        <mat-icon matSuffix>face</mat-icon>
+    </mat-form-field>
+    <p><mat-form-field>
+        <input matInput placeholder="Last name" formControlName="lastName">
+        <mat-icon matSuffix>person</mat-icon>
+    </mat-form-field>
+    <p><mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-icon matSuffix>drafts</mat-icon>
+    </mat-form-field>
+    <p><mat-form-field>
+        <input matInput placeholder="Phone number" formControlName="phoneNumber">
+        <mat-icon matSuffix>call</mat-icon>
+    </mat-form-field>
+    </p>
+</mat-dialog-content>
+<mat-dialog-actions align="center" style="margin-bottom: 10px;">
+    <button mat-raised-button color="primary" (click)="onSaveUser()" >Save</button>
+</mat-dialog-actions>

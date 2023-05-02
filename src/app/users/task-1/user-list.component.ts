@@ -1,6 +1,6 @@
-import { Component, OnInit,ElementRef, ViewChild  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from '../users.service';
-import { User, UserWithCheck } from 'src/app/models/user.interface';
+import { UserWithCheck } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-user-list',
