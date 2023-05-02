@@ -24,6 +24,7 @@ export class ApiUsersService {
               username: user.username,
               email: user.email,
               avatar: `https://i.pravatar.cc/400?u=${user.id+10}`,
+              phone: user.phone,
               checked: false
             };
           });
@@ -41,5 +42,29 @@ export class ApiUsersService {
       this.users$$.next(updatedUsers);
     });
   }
+
+  addUser(user: ApiUser): void {
+    this.http.post<ApiUser>(this.apiUrl, user)
+      .subscribe(newUser => {
+        const updatedUsers = [...this.users$$.value, newUser];
+        this.users$$.next(updatedUsers);
+      });
+  }
+
+  userAfterSave(userData: any): ApiUser {
+    const id = Math.floor(Math.random() * 1000);
+    const { firstName, lastName, email, phoneNumber } = userData;
+    const name = `${firstName} ${lastName}`;
+    return {
+      id,
+      name,
+      username: '',
+      email,
+      phone: phoneNumber,
+      avatar: `https://i.pravatar.cc/400?u=${id + 10}`,
+      checked: false
+    };
+  }
+  
   
 }

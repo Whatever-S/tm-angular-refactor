@@ -16,6 +16,7 @@ export interface ApiUser {
   name: string;
   username: string;
   email: string;
-  avatar?: string
+  phone: string;
+  avatar: string
   checked?: boolean;
 }
