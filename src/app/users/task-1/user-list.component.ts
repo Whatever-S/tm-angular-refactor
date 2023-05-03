@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from '../users.service';
 import { UserWithCheck } from 'src/app/models/user.interface';
 
@@ -9,30 +9,18 @@ import { UserWithCheck } from 'src/app/models/user.interface';
 })
 
 export class UserListComponent implements OnInit {
-  users: UserWithCheck[] = [];
-  checkesIds: number[] = [];
-  sortBy: string = '';
-  searchTerm: string = ''
+  @Input() users: UserWithCheck[] = [];
+  @Input() sortBy: string = '';
+  @Input() searchTerm: string = '';
+  @Output() selectedIds = new EventEmitter<number>();
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getUsers();
-    this.userService.users$.subscribe(users => {
-      this.users = users.map(user => ({ ...user, checked: false }));
-    });
+
   }
 
-  selectAll() {
-    this.users = this.users.map(user => ({ ...user, checked: true }));
-  }
-
-  hasCheckedUsers(): boolean {
-    return this.users.some(user => user.checked);
-  }
-
-  deleteSelected() {
-    const checkedIds = this.users.filter(user => user.checked).map(user => user.id);
-    this.userService.deleteUsers(checkedIds);
+  onUserChecked(userId: number): void {
+    this.selectedIds.emit(userId);
   }
 }

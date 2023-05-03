@@ -14,19 +14,20 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { UserListComponent } from './task-1/user-list.component'; 
+import { UserListComponent } from './task-1/user-list.component';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { FilterByNamePipe } from './pipes/filter.pipe';
-import { ApiUsersComponent } from './api-users/api-users.component';
-import { UserModalComponent } from './user-modal/user-modal.component'; 
+import { UsersComponent } from './users.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
+
 
 @NgModule({
   declarations: [
     UserListComponent,
     OrderByPipe,
     FilterByNamePipe,
-    ApiUsersComponent,
-    UserModalComponent
+    UsersComponent,
+    ToolbarComponent,
   ],
   imports: [
     CommonModule,
@@ -42,7 +43,7 @@ import { UserModalComponent } from './user-modal/user-modal.component';
     MatDialogModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   exports:[
     UserListComponent,
