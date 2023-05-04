@@ -46,7 +46,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     ReactiveFormsModule
   ],
   exports:[
-    UserListComponent,
+    UsersComponent,
   ]
 })
 

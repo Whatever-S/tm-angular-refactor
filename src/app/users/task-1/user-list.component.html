@@ -2,7 +2,7 @@
   <mat-card *ngFor="let user of users | orderBy: sortBy | filterByName: searchTerm" class="user-card">
     <mat-card-header>
       <img mat-card-avatar class="user-avatar" src='{{user.avatar}}' alt="{{ user.firstName }}">
-      <mat-checkbox [checked]="user.checked" (change)="onUserChecked(user.id)" class="checkbox"></mat-checkbox> <!-- <mat-checkbox [checked]="user.checked" (change)="user.checked = $event.checked" class="checkbox"></mat-checkbox> -->
+      <mat-checkbox [checked]="user.checked" (change)="user.checked = $event.checked" class="checkbox"></mat-checkbox>  <!--  <mat-checkbox [checked]="user.checked" (change)="onUserChecked(user.id)" class="checkbox"></mat-checkbox>-->
     </mat-card-header>
     <mat-card-content>
       <mat-card-title>{{ user.firstName }} </mat-card-title>

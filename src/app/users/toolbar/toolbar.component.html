@@ -3,7 +3,7 @@
   <div class="filters">
     <mat-form-field appearance="fill" color="accent" >
       <mat-label>Sort By</mat-label>
-      <mat-select class="sort" [(ngModel)]="sortBy">
+      <mat-select class="sort" #sort (selectionChange)="sortBy.emit(sort.value)">
           <mat-option value="firstName">First Name</mat-option>
           <mat-option value="lastName">Last Name</mat-option>
         </mat-select>
@@ -11,11 +11,11 @@
     <button mat-flat-button class="select-all" (click)="selectAll.emit()">Select all</button>
     <button mat-flat-button class="delete"
                  (click)="deleteSelected.emit()"
-                 [disabled]="!selectedIds.length">Delete
+                 [disabled]="!hasCheckedUsers()">Delete
     </button>
   </div>
   <mat-form-field appearance="fill" color="accent" class="search">
     <mat-label>Search</mat-label>
-    <input matInput #inputSearch [(ngModel)]="searchTerm" type="text" placeholder="Search...">
+    <input matInput #inputSearch (input)="searchTerm.emit(inputSearch.value)" type="text" placeholder="Search...">
   </mat-form-field>
 </mat-toolbar>

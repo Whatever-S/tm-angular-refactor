@@ -12,15 +12,10 @@ export class UserListComponent implements OnInit {
   @Input() users: UserWithCheck[] = [];
   @Input() sortBy: string = '';
   @Input() searchTerm: string = '';
-  @Output() selectedIds = new EventEmitter<number>();
-
+   
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-
   }
 
-  onUserChecked(userId: number): void {
-    this.selectedIds.emit(userId);
-  }
 }

@@ -1,1 +1,13 @@
-<p>users works!</p>
+<app-toolbar 
+    (selectAll)="selectAll()"
+    (deleteSelected)="deleteSelected()"
+    [users]="users"
+    (searchTerm)="searchTermUpdate($event)"
+    (sortBy)="sortUpdate($event)">
+</app-toolbar>
+<app-user-list
+    [sortBy]="sortBy"
+    [searchTerm]="searchTerm"
+    [users]="users"
+>
+</app-user-list>

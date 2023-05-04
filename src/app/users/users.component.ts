@@ -10,9 +10,8 @@ import { UserService } from './users.service';
 
 export class UsersComponent {
   users: UserWithCheck[] = [];
-  checkedIds: number[] = [];
   sortBy: string = '';
-  searchTerm: string = ''
+  searchTerm: string = '';
 
   constructor(private userService: UserService) { }
 
@@ -27,12 +26,19 @@ export class UsersComponent {
     this.users = this.users.map(user => ({ ...user, checked: true }));
   }
 
-  hasCheckedUsers(): boolean {
-    return this.users.some(user => user.checked);
-  }
-
   deleteSelected() {
     const checkedIds = this.users.filter(user => user.checked).map(user => user.id);
     this.userService.deleteUsers(checkedIds);
   }
+
+  sortUpdate(sort: string){
+    console.log(sort)
+    this.sortBy = sort
+  }
+
+  searchTermUpdate(term: string){
+    console.log(term)
+    this.searchTerm = term
+  }
+
 }
