@@ -14,40 +14,40 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { UserListComponent } from './user-list/user-list.component';
+import { ApiUsersComponent } from './api-users.component';
+import { ToolbarApiComponent } from './toolbar/toolbar.component';
+import { UsersListComponent } from './users-list/users-list.component';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { FilterByNamePipe } from './pipes/filter.pipe';
-import { UsersComponent } from './users.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-
+import { ModalFormComponent } from './modal-form/modal-form.component';
 
 @NgModule({
   declarations: [
-    UserListComponent,
+    ApiUsersComponent,
+    UsersListComponent,
+    ToolbarApiComponent,
     OrderByPipe,
     FilterByNamePipe,
-    UsersComponent,
-    ToolbarComponent,
+    ModalFormComponent
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     MatCardModule,
     MatToolbarModule,
     MatCheckboxModule,
     MatSelectModule,
     MatOptionModule,
     MatInputModule,
-    HttpClientModule,
     MatButtonModule,
     MatFormFieldModule,
     MatDialogModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports:[
-    UsersComponent,
+    ApiUsersComponent
   ]
 })
-
-export class UsersModule { }
+export class ApiUsersModule { }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserWithCheck } from '../models/user.interface';
-import { UserService } from './users.service';
+import { UserService } from '../services/users.service';
 
 @Component({
   selector: 'app-users',
@@ -9,7 +9,7 @@ import { UserService } from './users.service';
 })
 
 export class UsersComponent {
-  users: UserWithCheck[] = [];
+  users: UserWithCheck[]  = [];
   sortBy: string = '';
   searchTerm: string = '';
 
@@ -32,12 +32,10 @@ export class UsersComponent {
   }
 
   sortUpdate(sort: string){
-    console.log(sort)
     this.sortBy = sort
   }
 
   searchTermUpdate(term: string){
-    console.log(term)
     this.searchTerm = term
   }
 

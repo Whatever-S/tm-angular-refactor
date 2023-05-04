@@ -1,0 +1,25 @@
+<mat-toolbar class="toolbar-wrapper" color="primary" >
+    <span class="title">Angular Lecture 2</span>
+    <div class="filters">
+      <mat-form-field appearance="fill" color="accent" >
+        <mat-label>Order</mat-label>
+        <mat-select class="sort" #sort (selectionChange)="sortBy.emit(sort.value)">
+            <mat-option value="straight">Name from A to Z</mat-option>
+            <mat-option value="reverse">Name from Z to A</mat-option>
+          </mat-select>
+        </mat-form-field >
+      <button mat-flat-button class="select-all" (click)="selectAll.emit()">Select all</button>
+      <button mat-flat-button class="delete"
+                   (click)="deleteSelected.emit()"
+                   [disabled]="!hasCheckedUsers()">Delete
+      </button>
+      <mat-dialog-actions>
+        <button mat-flat-button (click)="createUser.emit()">Add user</button>
+    </mat-dialog-actions>
+    </div>
+    <mat-form-field appearance="fill" color="accent" class="search">
+      <mat-label>Search</mat-label>
+      <input matInput #inputSearch (input)="searchTerm.emit(inputSearch.value)" type="text" placeholder="Search...">
+    </mat-form-field>
+  </mat-toolbar>
+  

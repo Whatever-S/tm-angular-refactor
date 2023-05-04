@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UsersModule } from './users/users.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { ApiUsersModule } from './api-users/api-users.module';
+
 
 
 
@@ -20,9 +22,9 @@ import { MatButtonModule } from '@angular/material/button';
     AppRoutingModule,
     BrowserAnimationsModule,
     UsersModule,
+    ApiUsersModule,
     MatToolbarModule,
     MatButtonModule,
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UserService } from '../users.service';
-import { UserWithCheck } from 'src/app/models/user.interface';
+import { UserService } from '../../services/users.service';
+import { ApiUser, UserWithCheck } from 'src/app/models/user.interface';
 
 @Component({
   selector: 'app-user-list',

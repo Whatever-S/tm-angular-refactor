@@ -55,10 +55,11 @@ export class ApiUsersService {
     const id = Math.floor(Math.random() * 1000);
     const { firstName, lastName, email, phoneNumber } = userData;
     const name = `${firstName} ${lastName}`;
+    const username = `${firstName}_${lastName}_${id}`
     return {
       id,
       name,
-      username: '',
+      username,
       email,
       phone: phoneNumber,
       avatar: `https://i.pravatar.cc/400?u=${id + 10}`,

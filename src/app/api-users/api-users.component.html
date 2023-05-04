@@ -1,0 +1,16 @@
+<app-toolbar
+    (selectAll)="selectAll()"
+    (deleteSelected)="deleteSelected()"
+    (createUser) = 'createUser()'
+    [users]="users"
+    (searchTerm)="searchTermUpdate($event)"
+    (sortBy)="sortUpdate($event)">
+</app-toolbar>
+<app-users-list
+    [sortBy]="sortBy"
+    [searchTerm]="searchTerm"
+    [users]="users"
+>
+</app-users-list>
+
+
